@@ -1,0 +1,12 @@
+How to set the initial location of the robot from the c
+ros2 topic pub -1 /initialpose geometry_msgs/msg/PoseWithCovarianceStamped "{header: {stamp: {sec: 0}, frame_id: 'map'}, pose: {pose: {position: {x: 0.2, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}}"
+Remember you can publish values to any topics directly via terminal using
+- ros2 topics pub <topic_name> <message_type> <values>
+
+Path Planning
+Terminal 1. start localization server
+ros2 launch localization_server localization.launch.py
+Terminal 2. Start path planning server
+ros2 launch path_planner_server pathplanner.launch.py
+Terminal 3. Check result in Rviz2. press 2d goal button in Rviz2
+~/ros2_ws/src/path_planner_server$ rviz2 -d localization.rviz

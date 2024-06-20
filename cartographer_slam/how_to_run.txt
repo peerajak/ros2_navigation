@@ -1,0 +1,2 @@
+ros2 topic echo --qos-durability transient_local --qos-reliability reliable /map
+ros2 run tf2_tools view_frames
